@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PSBackend.API/PSBackend.API.csproj" />
+  <Project Path="PSBackend.BAL/PSBackend.BAL.csproj" />
+  <Project Path="PSBackend.DAL/PSBackend.DAL.csproj" />
+  <Project Path="PSBackend.Models/PSBackend.Models.csproj" />
+</Solution>

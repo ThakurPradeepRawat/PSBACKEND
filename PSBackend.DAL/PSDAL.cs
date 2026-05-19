@@ -1,0 +1,84 @@
+using PSBackend.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DataAccessLayer;
+namespace PSBackend.DAL
+{
+  public  class PSDAL : IPSDAL
+  {
+    private readonly SqlDataClient _sqlDataClient;
+    public PSDAL(SqlDataClient sqlDataClient) {
+      _sqlDataClient = sqlDataClient;
+
+    }
+    public RegisterUserOutputModel  Registeruser(RegisterUserInputModel input)
+    {
+      return _sqlDataClient.SingleModel<RegisterUserInputModel, RegisterUserOutputModel>("[auth].[sp_CreateUser]", input);
+    }
+
+    public GetUserByEmailOutputModel GetUserByEmail(GetUserByEmailInputModel input)
+    {
+      return _sqlDataClient.SingleModel<GetUserByEmailInputModel, GetUserByEmailOutputModel>("[auth].[sp_GetUserByEmail]", input);
+    }
+
+    public GetUserByIdOutputModel GetUserById(GetUserByIdInputModel input)
+    {
+      return _sqlDataClient.SingleModel<GetUserByIdInputModel, GetUserByIdOutputModel>("[auth].[sp_GetUserById]", input);
+    }
+
+    public List<GetAllTemplesOutputModel> GetAllTemples()
+    {
+        return _sqlDataClient.ListModel<object, GetAllTemplesOutputModel>("[temple].[sp_GetAllTemples]", new {});
+    }
+
+    public GetTempleByIdOutputModel GetTempleById(GetTempleByIdInputModel input)
+    {
+        return _sqlDataClient.SingleModel<GetTempleByIdInputModel, GetTempleByIdOutputModel>("[temple].[sp_GetTempleById]", input);
+    }
+
+    public CreateTempleOutputModel CreateTemple(CreateTempleInputModel input)
+    {
+        return _sqlDataClient.SingleModel<CreateTempleInputModel, CreateTempleOutputModel>("[temple].[sp_CreateTemple]", input);
+    }
+
+    public List<GetPrasadByTempleIdOutputModel> GetPrasadByTempleId(GetPrasadByTempleIdInputModel input)
+    {
+        return _sqlDataClient.ListModel<GetPrasadByTempleIdInputModel, GetPrasadByTempleIdOutputModel>("[catalog].[sp_GetPrasadByTempleId]", input);
+    }
+
+    public GetPrasadByIdOutputModel GetPrasadById(GetPrasadByIdInputModel input)
+    {
+        return _sqlDataClient.SingleModel<GetPrasadByIdInputModel, GetPrasadByIdOutputModel>("[catalog].[sp_GetPrasadById]", input);
+    }
+
+    public CreatePrasadOutputModel CreatePrasad(CreatePrasadInputModel input)
+    {
+        return _sqlDataClient.SingleModel<CreatePrasadInputModel, CreatePrasadOutputModel>("[catalog].[sp_CreatePrasad]", input);
+    }
+
+    public List<GetPrasadByIdOutputModel> GetPopularPrasad()
+    {
+      return _sqlDataClient.ListModel<object, GetPrasadByIdOutputModel>("[catalog].[sp_GetPopularPrasad]", new { });
+    }
+    public CreateOrderOutputModel CreateOrder(CreateOrderInputModel input)
+    {
+        return _sqlDataClient.SingleModel<CreateOrderInputModel, CreateOrderOutputModel>("[orders].[sp_CreateOrder]", input);
+    }
+
+    public GetOrderByIdOutputModel GetOrderById(GetOrderByIdInputModel input)
+    {
+        return _sqlDataClient.SingleModel<GetOrderByIdInputModel, GetOrderByIdOutputModel>("[orders].[sp_GetOrderById]", input);
+    }
+
+    public CreateOrderItemOutputModel CreateOrderItem(CreateOrderItemInputModel input)
+    {
+        return _sqlDataClient.SingleModel<CreateOrderItemInputModel, CreateOrderItemOutputModel>("[orders].[sp_CreateOrderItem]", input);
+    }
+
+    public List<GetOrderItemsOutputModel> GetOrderItems(GetOrderItemsInputModel input)
+    {
+        return _sqlDataClient.ListModel<GetOrderItemsInputModel, GetOrderItemsOutputModel>("[orders].[sp_GetOrderItems]", input);
+    }
+  }
+}
