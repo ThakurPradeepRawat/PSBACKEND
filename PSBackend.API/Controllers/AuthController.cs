@@ -68,6 +68,9 @@ public class AuthController : ControllerBase
             }
               var claims = new List<Claim>
                 {
+                    new Claim(ClaimTypes.NameIdentifier, result.User.UserId.ToString()),
+                    new Claim(ClaimTypes.Email, result.User.Email ?? string.Empty),
+                    new Claim(ClaimTypes.Name, $"{result.User.FirstName} {result.User.LastName}".Trim())
                 };
       result.Token = _tokenRepo.GenerateToken(claims);
 

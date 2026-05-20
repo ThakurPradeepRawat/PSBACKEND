@@ -21,20 +21,25 @@ namespace PSBackend.BAL.Repositories
       return _sqlDataClient.Registeruser(model);
     }
 
-    public LoginUserOutputModel LoginUser(LoginUserInputModel model)
+    public LoginUserOutputModel? LoginUser(LoginUserInputModel model)
     {
         var user = _sqlDataClient.GetUserByEmail(new GetUserByEmailInputModel { Email = model.Email });
+
+      if (user == null || string.IsNullOrWhiteSpace(user.PasswordHash))
+        {
+            return null;
+        }
+
        bool IsValid = BCrypt.Net.BCrypt.Verify( model.Password, user.PasswordHash);
 
-      
-      if (user == null || !IsValid)
+      if (!IsValid)
         {
             return null; // Or throw exception based on convention
         }
 
         return new LoginUserOutputModel
         {
-            Token = null, // Replace with real token generation
+            Token = string.Empty,
             User = user
         };
     }

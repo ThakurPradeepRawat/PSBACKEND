@@ -9,7 +9,7 @@ public class RegisterUserUow
 {
   private readonly IPSDAL _sqlDataClient;
   private readonly RegisterUserInputModel _input;
-  public RegisterUserOutputModel output;
+  public RegisterUserOutputModel? output;
 
   public RegisterUserUow(IPSDAL sqlDataClient, RegisterUserInputModel input)
   {

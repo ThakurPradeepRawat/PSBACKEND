@@ -21,7 +21,7 @@ public class Order
 
 public class CreateOrderInputModel
 {
-    public string OrderNumber { get; set; }
+    public string? OrderNumber { get; set; }
     public int UserId { get; set; }
     public int AddressId { get; set; }
     public int? CouponId { get; set; }
@@ -30,8 +30,8 @@ public class CreateOrderInputModel
     public decimal DiscountAmount { get; set; }
     public decimal TaxAmount { get; set; }
     public decimal TotalAmount { get; set; }
-    public string DeliveryType { get; set; }
-    public string SpecialInstructions { get; set; }
+    public string? DeliveryType { get; set; }
+    public string? SpecialInstructions { get; set; }
 }
 
 public class CreateOrderOutputModel

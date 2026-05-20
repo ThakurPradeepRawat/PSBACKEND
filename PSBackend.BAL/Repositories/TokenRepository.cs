@@ -20,7 +20,7 @@ namespace PSBackend.BAL.Repositories
     public string GenerateToken(IEnumerable<Claim> claims)
     {
       var key = new SymmetricSecurityKey(
-          Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+          Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is missing.")));
 
       var creds = new SigningCredentials(
           key, SecurityAlgorithms.HmacSha256);

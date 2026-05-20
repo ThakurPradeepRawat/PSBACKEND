@@ -15,6 +15,14 @@ namespace PSBackend.BAL.Repositories
 
         public CreateOrderOutputModel CreateOrder(CreateOrderInputModel order)
         {
+            if (string.IsNullOrWhiteSpace(order.OrderNumber))
+            {
+                order.OrderNumber = $"PRS-{DateTime.UtcNow:yyyyMMddHHmmssfff}";
+            }
+
+            order.DeliveryType ??= "Standard";
+            order.SpecialInstructions ??= string.Empty;
+
             return _sqlDataClient.CreateOrder(order);
         }
 

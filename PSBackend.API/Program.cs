@@ -8,6 +8,9 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 // Add services to the container.
 builder.Services.AddControllers();
 
@@ -62,7 +65,7 @@ builder.Services
         ValidAudience = builder.Configuration["Jwt:Audience"],
 
         IssuerSigningKey = new SymmetricSecurityKey(
-              Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+              Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is missing.")))
       };
     });
 

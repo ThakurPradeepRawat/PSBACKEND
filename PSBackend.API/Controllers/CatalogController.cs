@@ -19,6 +19,7 @@ public class CatalogController : ControllerBase
     }
 
     [HttpPost("GetPrasadByTempleId")]
+    [AllowAnonymous]
     public ActionResult<List<GetPrasadByTempleIdOutputModel>> GetPrasadByTempleId([FromBody] GetPrasadByTempleIdInputModel input)
     {
         try
@@ -34,6 +35,7 @@ public class CatalogController : ControllerBase
     }
 
     [HttpPost("GetPrasadById")]
+    [AllowAnonymous]
     public ActionResult<GetPrasadByIdOutputModel> GetPrasadById([FromBody] GetPrasadByIdInputModel input)
     {
         try
@@ -52,6 +54,7 @@ public class CatalogController : ControllerBase
         }
     }
      [HttpPost("GetPopularPrasad")]
+     [AllowAnonymous]
      public ActionResult<GetPrasadByIdOutputModel> GetPopularPrasad()
      {
     return Ok( _catalogRepo.GetPopularPrasad());

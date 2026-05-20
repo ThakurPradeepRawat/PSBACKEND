@@ -19,6 +19,7 @@ public class TemplesController : ControllerBase
     }
 
     [HttpPost("GetAllTemples")]
+    [AllowAnonymous]
     public ActionResult<List<GetAllTemplesOutputModel>> GetAllTemples([FromBody] GetAllTemplesInputModel input)
     {
         try
@@ -33,6 +34,7 @@ public class TemplesController : ControllerBase
     }
 
     [HttpPost("GetTempleById")]
+    [AllowAnonymous]
     public ActionResult<GetTempleByIdOutputModel> GetTempleById([FromBody] GetTempleByIdInputModel input)
     {
         try
