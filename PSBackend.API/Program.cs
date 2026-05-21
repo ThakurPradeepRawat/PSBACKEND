@@ -42,11 +42,17 @@ builder.Services.AddScoped<ITokenRepository , TokenRepository>();
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-  options.AddPolicy("AllowAngular",
-      b => b.WithOrigins("http://localhost:4200")
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+  options.AddPolicy("AllowFrontend",
+      policy =>
+      {
+        policy.WithOrigins(
+              "https://icy-moss-07b6d0200.7.azurestaticapps.net"
+          )
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+      });
 });
+
 
 
 // -------------------- JWT AUTHENTICATION --------------------
