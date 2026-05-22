@@ -42,11 +42,11 @@ builder.Services.AddScoped<ITokenRepository , TokenRepository>();
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-  options.AddPolicy("AllowFrontend",
+  options.AddPolicy("AllowAngular",
       policy =>
       {
         policy.WithOrigins(
-              "https://icy-moss-07b6d0200.7.azurestaticapps.net"
+              "https://icy-moss-07b6d0200.7.azurestaticapps.net", "http://localhost:4200"
           )
           .AllowAnyHeader()
           .AllowAnyMethod();
