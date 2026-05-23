@@ -80,5 +80,45 @@ namespace PSBackend.DAL
     {
         return _sqlDataClient.ListModel<GetOrderItemsInputModel, GetOrderItemsOutputModel>("[orders].[sp_GetOrderItems]", input);
     }
+
+    public List<FestivalModel> GetAllFestivals()
+    {
+        return _sqlDataClient.ListModel<object, FestivalModel>("GetAllFestivals", new { });
+    }
+
+    public List<FestivalProductModel> GetAllFestivalProducts()
+    {
+        return _sqlDataClient.ListModel<object, FestivalProductModel>("GetAllFestivalProducts", new { });
+    }
+
+    public List<PujaCategoryModel> GetAllPujaCategories()
+    {
+        return _sqlDataClient.ListModel<object, PujaCategoryModel>("GetAllPujaCategories", new { });
+    }
+
+    public List<PujaModel> GetAllPujas()
+    {
+        return _sqlDataClient.ListModel<object, PujaModel>("GetAllPujas", new { });
+    }
+
+    public List<RatingModel> GetAllRatings()
+    {
+        return _sqlDataClient.ListModel<object, RatingModel>("GetAllRatings", new { });
+    }
+
+    public List<RegionModel> GetAllRegions()
+    {
+        return _sqlDataClient.ListModel<object, RegionModel>("GetAllRegions", new { });
+    }
+
+    public List<GiftBoxModel> GetAllGiftBoxes()
+    {
+        return _sqlDataClient.ListModel<object, GiftBoxModel>("GetAllGiftBoxes", new { });
+    }
+
+    public List<GiftOccasionModel> GetAllGiftOccasions()
+    {
+        return _sqlDataClient.ListModel<object, GiftOccasionModel>("GetAllGiftOccasions", new { });
+    }
   }
 }

@@ -23,5 +23,13 @@ namespace PSBackend.DAL
     GetOrderByIdOutputModel GetOrderById(GetOrderByIdInputModel input);
     CreateOrderItemOutputModel CreateOrderItem(CreateOrderItemInputModel input);
     List<GetOrderItemsOutputModel> GetOrderItems(GetOrderItemsInputModel input);
+    List<FestivalModel> GetAllFestivals();
+    List<FestivalProductModel> GetAllFestivalProducts();
+    List<PujaCategoryModel> GetAllPujaCategories();
+    List<PujaModel> GetAllPujas();
+    List<RatingModel> GetAllRatings();
+    List<RegionModel> GetAllRegions();
+    List<GiftBoxModel> GetAllGiftBoxes();
+    List<GiftOccasionModel> GetAllGiftOccasions();
   }
 }
