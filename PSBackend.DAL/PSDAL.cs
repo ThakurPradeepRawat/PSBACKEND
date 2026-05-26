@@ -81,6 +81,11 @@ namespace PSBackend.DAL
         return _sqlDataClient.ListModel<GetOrderItemsInputModel, GetOrderItemsOutputModel>("[orders].[sp_GetOrderItems]", input);
     }
 
+    public UpdateOrderPaymentOutputModel UpdateOrderPayment(UpdateOrderPaymentInputModel input)
+    {
+        return _sqlDataClient.SingleModel<UpdateOrderPaymentInputModel, UpdateOrderPaymentOutputModel>("[orders].[sp_UpdateOrderPayment]", input);
+    }
+
     public List<FestivalModel> GetAllFestivals()
     {
         return _sqlDataClient.ListModel<object, FestivalModel>("GetAllFestivals", new { });

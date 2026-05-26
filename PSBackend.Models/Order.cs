@@ -17,6 +17,9 @@ public class Order
     public string? SpecialInstructions { get; set; }
     public DateTime PlacedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+    public string? RazorpayOrderId { get; set; }
+    public string? PaymentId { get; set; }
+    public string? PaymentStatus { get; set; }
 }
 
 public class CreateOrderInputModel
@@ -32,6 +35,7 @@ public class CreateOrderInputModel
     public decimal TotalAmount { get; set; }
     public string? DeliveryType { get; set; }
     public string? SpecialInstructions { get; set; }
+    public string? RazorpayOrderId { get; set; }
 }
 
 public class CreateOrderOutputModel
@@ -46,4 +50,17 @@ public class GetOrderByIdInputModel
 
 public class GetOrderByIdOutputModel : Order
 {
+}
+
+public class UpdateOrderPaymentInputModel
+{
+    public int OrderId { get; set; }
+    public string PaymentId { get; set; } = string.Empty;
+    public string PaymentStatus { get; set; } = string.Empty;
+    public string OrderStatus { get; set; } = string.Empty;
+}
+
+public class UpdateOrderPaymentOutputModel
+{
+    // Emtpy or could return rows affected if sp returns it, we'll just return a success flag or id if available
 }

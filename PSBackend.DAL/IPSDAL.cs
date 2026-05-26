@@ -23,6 +23,7 @@ namespace PSBackend.DAL
     GetOrderByIdOutputModel GetOrderById(GetOrderByIdInputModel input);
     CreateOrderItemOutputModel CreateOrderItem(CreateOrderItemInputModel input);
     List<GetOrderItemsOutputModel> GetOrderItems(GetOrderItemsInputModel input);
+    UpdateOrderPaymentOutputModel UpdateOrderPayment(UpdateOrderPaymentInputModel input);
     List<FestivalModel> GetAllFestivals();
     List<FestivalProductModel> GetAllFestivalProducts();
     List<PujaCategoryModel> GetAllPujaCategories();

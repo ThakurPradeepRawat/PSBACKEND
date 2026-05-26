@@ -40,5 +40,10 @@ namespace PSBackend.BAL.Repositories
         {
             return _sqlDataClient.GetOrderItems(new GetOrderItemsInputModel { OrderId = orderId });
         }
+
+        public UpdateOrderPaymentOutputModel UpdateOrderPayment(UpdateOrderPaymentInputModel input)
+        {
+            return _sqlDataClient.UpdateOrderPayment(input);
+        }
     }
 }
