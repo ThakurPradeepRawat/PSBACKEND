@@ -40,7 +40,16 @@ namespace PSBackend.BAL.Repositories
         return new LoginUserOutputModel
         {
             Token = string.Empty,
-            User = user
+           User  = new GetUserByIdOutputModel
+           {
+               UserId = user.UserId,
+               FirstName = user.FirstName,
+               LastName = user.LastName,
+               Phone = user.Phone,
+               Email = user.Email,
+               ProfileImageUrl = user.ProfileImageUrl
+
+           }
         };
     }
 

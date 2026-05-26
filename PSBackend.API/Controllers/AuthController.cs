@@ -20,8 +20,6 @@ public class AuthController : ControllerBase
         _authRepo = authRepository;
         _tokenRepo= tokenRepository;
 
-      
-
     }
 
     [HttpPost("register")]

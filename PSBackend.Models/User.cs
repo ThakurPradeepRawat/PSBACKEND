@@ -25,7 +25,7 @@ public class  RegisterUserInputModel
  {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-  public string Email { get; set; }
+    public string Email { get; set; }
     public string Phone { get; set; }
     public string  PasswordHash { get; set; }
     public string ProfileImageUrl { get; set; }
@@ -42,8 +42,15 @@ public class GetUserByEmailInputModel
     public string Email { get; set; }
 }
 
-public class GetUserByEmailOutputModel : User
+public class GetUserByEmailOutputModel 
 {
+    public int UserId { get; set; }
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string? Phone { get; set; }
+    public string PasswordHash { get; set; } = string.Empty;
+    public string? ProfileImageUrl { get; set; }
 }
 
 public class GetUserByIdInputModel
@@ -51,8 +58,14 @@ public class GetUserByIdInputModel
     public int UserId { get; set; }
 }
 
-public class GetUserByIdOutputModel : User
+public class GetUserByIdOutputModel 
 {
+    public int UserId { get; set; }
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string? Phone { get; set; }
+    public string? ProfileImageUrl { get; set; }
 }
 
 public class LoginUserInputModel
@@ -64,5 +77,5 @@ public class LoginUserInputModel
 public class LoginUserOutputModel
 {
     public string Token { get; set; }
-    public GetUserByEmailOutputModel User { get; set; }
+    public GetUserByIdOutputModel User { get; set; }
 }
