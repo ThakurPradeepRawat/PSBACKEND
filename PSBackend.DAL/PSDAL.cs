@@ -14,17 +14,17 @@ namespace PSBackend.DAL
     }
     public RegisterUserOutputModel  Registeruser(RegisterUserInputModel input)
     {
-      return _sqlDataClient.SingleModel<RegisterUserInputModel, RegisterUserOutputModel>("[auth].[sp_CreateUser]", input);
+      return _sqlDataClient.SingleModel<RegisterUserInputModel, RegisterUserOutputModel>("[auth].[auth_sp_CreateUser]", input);
     }
 
     public GetUserByEmailOutputModel GetUserByEmail(GetUserByEmailInputModel input)
     {
-      return _sqlDataClient.SingleModel<GetUserByEmailInputModel, GetUserByEmailOutputModel>("[auth].[sp_GetUserByEmail]", input);
+      return _sqlDataClient.SingleModel<GetUserByEmailInputModel, GetUserByEmailOutputModel>("[auth].[auth_sp_GetUserByEmail]", input);
     }
 
     public GetUserByIdOutputModel GetUserById(GetUserByIdInputModel input)
     {
-      return _sqlDataClient.SingleModel<GetUserByIdInputModel, GetUserByIdOutputModel>("[auth].[sp_GetUserById]", input);
+      return _sqlDataClient.SingleModel<GetUserByIdInputModel, GetUserByIdOutputModel>("[auth].[auth_sp_GetUserById]", input);
     }
 
     public List<GetAllTemplesOutputModel> GetAllTemples()
