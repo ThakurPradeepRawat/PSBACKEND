@@ -260,7 +260,7 @@ Ensure the following are installed on your machine:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/prashad-backend.git
+git clone "https://github.com/ThakurPradeepRawat/PSBACKEND"
 cd prashad-backend
 ```
 
