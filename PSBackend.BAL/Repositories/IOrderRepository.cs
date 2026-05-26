@@ -8,4 +8,5 @@ public interface IOrderRepository
     GetOrderByIdOutputModel? GetOrderById(int orderId);
     CreateOrderItemOutputModel AddOrderItem(CreateOrderItemInputModel orderItem);
     List<GetOrderItemsOutputModel> GetOrderItems(int orderId);
+    UpdateOrderPaymentOutputModel UpdateOrderPayment(UpdateOrderPaymentInputModel input);
 }
