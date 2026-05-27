@@ -88,42 +88,42 @@ namespace PSBackend.DAL
 
     public List<FestivalModel> GetAllFestivals()
     {
-        return _sqlDataClient.ListModel<object, FestivalModel>("GetAllFestivals", new { });
+        return _sqlDataClient.ListModel<object, FestivalModel>("[common].[common_sp_GetAllFestivals]", new { });
     }
 
     public List<FestivalProductModel> GetAllFestivalProducts()
     {
-        return _sqlDataClient.ListModel<object, FestivalProductModel>("GetAllFestivalProducts", new { });
+        return _sqlDataClient.ListModel<object, FestivalProductModel> ("[common].[common_sp_GetAllFestivalProducts]", new { });
     }
 
     public List<PujaCategoryModel> GetAllPujaCategories()
     {
-        return _sqlDataClient.ListModel<object, PujaCategoryModel>("GetAllPujaCategories", new { });
+        return _sqlDataClient.ListModel<object, PujaCategoryModel>("[common].[common_sp_GetAllPujaCategories]", new { });
     }
 
     public List<PujaModel> GetAllPujas()
     {
-        return _sqlDataClient.ListModel<object, PujaModel>("GetAllPujas", new { });
+        return _sqlDataClient.ListModel<object, PujaModel>("[common].[common_sp_GetAllPujas]", new { });
     }
 
     public List<RatingModel> GetAllRatings()
     {
-        return _sqlDataClient.ListModel<object, RatingModel>("GetAllRatings", new { });
+        return _sqlDataClient.ListModel<object, RatingModel>(" [common].[common_sp_GetAllRatings]", new { });
     }
 
     public List<RegionModel> GetAllRegions()
     {
-        return _sqlDataClient.ListModel<object, RegionModel>("GetAllRegions", new { });
+        return _sqlDataClient.ListModel<object, RegionModel>("[common].[common_sp_GetAllRegions]", new { });
     }
 
     public List<GiftBoxModel> GetAllGiftBoxes()
     {
-        return _sqlDataClient.ListModel<object, GiftBoxModel>("GetAllGiftBoxes", new { });
+        return _sqlDataClient.ListModel<object, GiftBoxModel>(" [common].[common_sp_GetAllGiftBoxes]", new { });
     }
 
     public List<GiftOccasionModel> GetAllGiftOccasions()
     {
-        return _sqlDataClient.ListModel<object, GiftOccasionModel>("GetAllGiftOccasions", new { });
+        return _sqlDataClient.ListModel<object, GiftOccasionModel>(" [common].[common_sp_GetAllGiftOccasions] ", new { });
     }
   }
 }
