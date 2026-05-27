@@ -118,12 +118,12 @@ namespace PSBackend.DAL
 
     public List<GiftBoxModel> GetAllGiftBoxes()
     {
-        return _sqlDataClient.ListModel<object, GiftBoxModel>(" [common].[common_sp_GetAllGiftBoxes]", new { });
+        return _sqlDataClient.ListModel<object, GiftBoxModel>("[common].[common_sp_GetAllGiftBoxes]", new { });
     }
 
     public List<GiftOccasionModel> GetAllGiftOccasions()
     {
-        return _sqlDataClient.ListModel<object, GiftOccasionModel>(" [common].[common_sp_GetAllGiftOccasions] ", new { });
+        return _sqlDataClient.ListModel<object, GiftOccasionModel>("[common].[common_sp_GetAllGiftOccasions]", new { });
     }
   }
 }
