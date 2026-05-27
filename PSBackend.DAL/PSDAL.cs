@@ -123,7 +123,7 @@ namespace PSBackend.DAL
 
     public List<GiftOccasionModel> GetAllGiftOccasions()
     {
-        return _sqlDataClient.ListModel<object, GiftOccasionModel>("[common].[common_sp_GetAllGiftOccasions] ", new { });
+        return _sqlDataClient.ListModel<object, GiftOccasionModel>("[common].[common_sp_GetAllGiftOccasions]", new { });
     }
   }
 }
