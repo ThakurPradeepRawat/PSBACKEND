@@ -29,61 +29,61 @@ namespace PSBackend.DAL
 
     public List<GetAllTemplesOutputModel> GetAllTemples()
     {
-        return _sqlDataClient.ListModel<object, GetAllTemplesOutputModel>("[temple].[sp_GetAllTemples]", new {});
+        return _sqlDataClient.ListModel<object, GetAllTemplesOutputModel>("[temple].[temple_sp_GetAllTemples]", new {});
     }
 
     public GetTempleByIdOutputModel GetTempleById(GetTempleByIdInputModel input)
     {
-        return _sqlDataClient.SingleModel<GetTempleByIdInputModel, GetTempleByIdOutputModel>("[temple].[sp_GetTempleById]", input);
+        return _sqlDataClient.SingleModel<GetTempleByIdInputModel, GetTempleByIdOutputModel>("[temple].[temple_sp_GetTempleById]", input);
     }
 
     public CreateTempleOutputModel CreateTemple(CreateTempleInputModel input)
     {
-        return _sqlDataClient.SingleModel<CreateTempleInputModel, CreateTempleOutputModel>("[temple].[sp_CreateTemple]", input);
+        return _sqlDataClient.SingleModel<CreateTempleInputModel, CreateTempleOutputModel>("[temple].[temple_sp_CreateTemple]", input);
     }
 
     public List<GetPrasadByTempleIdOutputModel> GetPrasadByTempleId(GetPrasadByTempleIdInputModel input)
     {
-        return _sqlDataClient.ListModel<GetPrasadByTempleIdInputModel, GetPrasadByTempleIdOutputModel>("[catalog].[sp_GetPrasadByTempleId]", input);
+        return _sqlDataClient.ListModel<GetPrasadByTempleIdInputModel, GetPrasadByTempleIdOutputModel>("[catalog].[catalog_sp_GetPrasadByTempleId]", input);
     }
 
     public GetPrasadByIdOutputModel GetPrasadById(GetPrasadByIdInputModel input)
     {
-        return _sqlDataClient.SingleModel<GetPrasadByIdInputModel, GetPrasadByIdOutputModel>("[catalog].[sp_GetPrasadById]", input);
+        return _sqlDataClient.SingleModel<GetPrasadByIdInputModel, GetPrasadByIdOutputModel>("[catalog].[catalog_sp_GetPrasadById]", input);
     }
 
     public CreatePrasadOutputModel CreatePrasad(CreatePrasadInputModel input)
     {
-        return _sqlDataClient.SingleModel<CreatePrasadInputModel, CreatePrasadOutputModel>("[catalog].[sp_CreatePrasad]", input);
+        return _sqlDataClient.SingleModel<CreatePrasadInputModel, CreatePrasadOutputModel>("[catalog].[catalog_sp_CreatePrasad]", input);
     }
 
     public List<GetPrasadByIdOutputModel> GetPopularPrasad()
     {
-      return _sqlDataClient.ListModel<object, GetPrasadByIdOutputModel>("[catalog].[sp_GetPopularPrasad]", new { });
+      return _sqlDataClient.ListModel<object, GetPrasadByIdOutputModel>("[catalog].[catalog_sp_GetPopularPrasad]", new { });
     }
     public CreateOrderOutputModel CreateOrder(CreateOrderInputModel input)
     {
-        return _sqlDataClient.SingleModel<CreateOrderInputModel, CreateOrderOutputModel>("[orders].[sp_CreateOrder]", input);
+        return _sqlDataClient.SingleModel<CreateOrderInputModel, CreateOrderOutputModel>("[orders].[orders_sp_CreateOrder]", input);
     }
 
     public GetOrderByIdOutputModel GetOrderById(GetOrderByIdInputModel input)
     {
-        return _sqlDataClient.SingleModel<GetOrderByIdInputModel, GetOrderByIdOutputModel>("[orders].[sp_GetOrderById]", input);
+        return _sqlDataClient.SingleModel<GetOrderByIdInputModel, GetOrderByIdOutputModel>("[orders].[orders_sp_GetOrderById]", input);
     }
 
     public CreateOrderItemOutputModel CreateOrderItem(CreateOrderItemInputModel input)
     {
-        return _sqlDataClient.SingleModel<CreateOrderItemInputModel, CreateOrderItemOutputModel>("[orders].[sp_CreateOrderItem]", input);
+        return _sqlDataClient.SingleModel<CreateOrderItemInputModel, CreateOrderItemOutputModel>("[orders].[orders_sp_CreateOrderItem]", input);
     }
 
     public List<GetOrderItemsOutputModel> GetOrderItems(GetOrderItemsInputModel input)
     {
-        return _sqlDataClient.ListModel<GetOrderItemsInputModel, GetOrderItemsOutputModel>("[orders].[sp_GetOrderItems]", input);
+        return _sqlDataClient.ListModel<GetOrderItemsInputModel, GetOrderItemsOutputModel>("[orders].[orders_sp_GetOrderItems]", input);
     }
 
     public UpdateOrderPaymentOutputModel UpdateOrderPayment(UpdateOrderPaymentInputModel input)
     {
-        return _sqlDataClient.SingleModel<UpdateOrderPaymentInputModel, UpdateOrderPaymentOutputModel>("[orders].[sp_UpdateOrderPayment]", input);
+        return _sqlDataClient.SingleModel<UpdateOrderPaymentInputModel, UpdateOrderPaymentOutputModel>("[orders].[orders_sp_UpdateOrderPayment]", input);
     }
 
     public List<FestivalModel> GetAllFestivals()
