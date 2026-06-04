@@ -24,11 +24,9 @@ namespace PSBackend.Models
         public string? PriceNote { get; set; }
         public bool IsPopular { get; set; }
         public string? ButtonClass { get; set; }
-        
-        // This is the raw string from DB (pipe-separated)
+       
         public string? Contents { get; set; }
-        
-        // This property converts the raw string into a list for JSON serialization
+     
         public List<string> ContentList 
         { 
             get 

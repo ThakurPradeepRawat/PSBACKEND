@@ -62,5 +62,5 @@ public class UpdateOrderPaymentInputModel
 
 public class UpdateOrderPaymentOutputModel
 {
-    // Emtpy or could return rows affected if sp returns it, we'll just return a success flag or id if available
+    
 }

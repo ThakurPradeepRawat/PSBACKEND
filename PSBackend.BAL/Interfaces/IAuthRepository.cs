@@ -1,6 +1,6 @@
 using PSBackend.Models;
 
-namespace PSBackend.BAL.Repositories;
+namespace PSBackend.BAL.Interfaces;
 
 public interface IAuthRepository
 {
