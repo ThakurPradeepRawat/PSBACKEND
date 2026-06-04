@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PSBackend.BAL.Repositories;
-using PSBackend.BAL.UnitOfWork;
+using PSBackend.BAL.Interfaces;
 using PSBackend.Models;
 using System.Security.Claims;
 

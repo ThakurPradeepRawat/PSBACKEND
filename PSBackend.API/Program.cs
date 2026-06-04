@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using PSBackend.DAL;
 using System.Text;
+using PSBackend.BAL.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

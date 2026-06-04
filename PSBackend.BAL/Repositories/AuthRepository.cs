@@ -1,6 +1,7 @@
 using PSBackend.DAL;
 using PSBackend.Models;
 using BCrypt;
+using PSBackend.BAL.Interfaces;
 
 namespace PSBackend.BAL.Repositories
 {
@@ -34,7 +35,7 @@ namespace PSBackend.BAL.Repositories
 
       if (!IsValid)
         {
-            return null; // Or throw exception based on convention
+            return null; 
         }
 
         return new LoginUserOutputModel

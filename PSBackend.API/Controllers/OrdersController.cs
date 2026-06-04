@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using PSBackend.BAL.Repositories;
+using PSBackend.BAL.Interfaces;
 using PSBackend.Models;
 using Razorpay.Api;
 using System.Collections.Generic;

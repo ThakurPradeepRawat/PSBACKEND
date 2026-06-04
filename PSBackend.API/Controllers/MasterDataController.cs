@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PSBackend.BAL.Repositories;
+using PSBackend.BAL.Interfaces;
 
 namespace PSBackend.API.Controllers
 {

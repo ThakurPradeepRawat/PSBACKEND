@@ -1,7 +1,7 @@
 using PSBackend.Models;
 using System.Collections.Generic;
 
-namespace PSBackend.BAL.Repositories
+namespace PSBackend.BAL.Interfaces
 {
     public interface IPujaRepository
     {
